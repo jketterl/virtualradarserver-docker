@@ -6,7 +6,7 @@ SOURCE=/config/source
 mkdir -p $SOURCE
 
 if [[ ! -z ${CONFIG_URL:-} ]]; then
-    curl -o /config/Configuration.xml ${CONFIG_URL} --silent
+    aws s3 cp ${CONFIG_URL} /config/Configuration.xml
 fi
 
 if [[ ! -f $SOURCE/admin_created ]]; then
