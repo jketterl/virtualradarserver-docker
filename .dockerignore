@@ -4,3 +4,4 @@ dockerfiles*
 *.dockerfile
 travis*
 LICENSE
+.idea

@@ -5,6 +5,10 @@ SOURCE=/config/source
 
 mkdir -p $SOURCE
 
+if [[ ! -z ${CONFIG_URL:-} ]]; then
+    wget -o /config/Configuration.xml ${CONFIG_URL}
+fi
+
 if [[ ! -f $SOURCE/admin_created ]]; then
     echo "First Time Run: Admin account created"
     echo "Username: admin"
