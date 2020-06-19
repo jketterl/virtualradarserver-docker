@@ -6,7 +6,7 @@ SOURCE=/config/source
 mkdir -p $SOURCE
 
 if [[ ! -z ${CONFIG_URL:-} ]]; then
-    wget -o /config/Configuration.xml ${CONFIG_URL}
+    curl -o /config/Configuration.xml ${CONFIG_URL} --silent
 fi
 
 if [[ ! -f $SOURCE/admin_created ]]; then
